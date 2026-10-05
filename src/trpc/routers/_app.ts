@@ -1,11 +1,8 @@
 import { z } from "zod";
 import { baseProcedure, createTRPCRouter } from "../init";
+import { voiceRouter } from "./voices";
 export const appRouter = createTRPCRouter({
-    health: baseProcedure.query(async () => {
-        throw Error("Something went wrong");
-
-        return { status: "ok" };
-    }),
+    voices: voiceRouter,
 });
 // export type definition of API
 export type AppRouter = typeof appRouter;
