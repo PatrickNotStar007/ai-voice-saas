@@ -22,9 +22,11 @@ export function TTSVoicesProvider({
     children: React.ReactNode;
     value: TTSVoicesContextValue;
 }) {
-    <TTSVoicesContext.Provider value={value}>
-        {children}
-    </TTSVoicesContext.Provider>;
+    return (
+        <TTSVoicesContext.Provider value={value}>
+            {children}
+        </TTSVoicesContext.Provider>
+    );
 }
 
 export function useTTSVoices() {
